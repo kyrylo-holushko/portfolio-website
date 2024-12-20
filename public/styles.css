@@ -1,0 +1,132 @@
+:root { --bar: 58px }
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav, footer {
+    min-height: var(--bar);
+    background-color: steelblue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a, footer a{
+    height: 100%;
+    padding: 0 1ch;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover,
+nav a:active,
+nav a:link,
+nav a:visited,
+footer a:hover,
+footer a:active,
+footer a:link,
+footer a:visited
+{
+    color: inherit;
+}
+
+#sidebar-active {
+    display: none;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: "Poppins" !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.py-main {
+    padding-top: var(--bar);
+    padding-bottom: var(--bar);
+}
+
+#me {
+    border-radius: 50%;
+    filter: contrast(107%);
+    max-width: 45%;
+    margin:auto;
+    display: block;
+}
+
+main {
+    flex-grow: 1;
+    font-size: clamp(16px, (1rem + ((100vw - 780px) / (1280 - 780)) * (20 - 16)), 20px);
+    display: grid;
+    grid-gap: 0.5px;
+    grid-template-columns: minmax(2ch, auto) minmax(auto, 6.5in) minmax(2ch, auto);
+}
+
+section {
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+h1,h2,h3,h4 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    padding-top: calc(var(--bar) * 0.5);
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.17em;
+}
+
+h4 {
+    font-size: 1.33em;
+    padding-bottom: calc(var(--bar) * 0.5);
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+@media (width > 600px) {
+    nav a .material-icons {
+        display: none;
+    }
+}
+
+@media (width <= 600px) {
+    nav {
+        justify-content: end;
+    }   
+}
+
+.hide-on-small-only {
+    display: flex;
+    justify-content: center;
+}
+
+.hide-on-small-only li{
+    display: block;
+}

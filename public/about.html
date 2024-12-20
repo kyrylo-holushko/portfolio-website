@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="none">
+    <meta name="author" content="Kyrylo Holushko">
+    <meta name="description" content="Kyrylo Holushko's Portfolio Website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Kyrylo Holushko Portfolio">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:url" content="/">-->
+    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQH--WcK6NAIxQ/profile-displayphoto-shrink_400_400/B4EZNel6.bGQAg-/0/1732458819896?e=1740009600&v=beta&t=4QOF_32uHtTD75-zOVwDEMBea_h_N_LV-5ZIShVHgBs">
+    <meta property="og:description" content="Kyrylo Holushko's Portfolio Website. A display of my services, my projects as well as short bio about me."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>About</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
+            <ul class="hide-on-small-only">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="services.html">Services</a></li>  
+    </ul>
+
+    <!-- MAIN STARTS -->
+
+    <main class="py-main">
+        <aside></aside>
+        <section>
+            <h1>About Me</h1>
+        </section>
+        <aside></aside>
+    </main>
+
+    <!-- MAIN ENDS -->
+
+    <footer>
+        <p>&copy; 2024</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elems = document.querySelectorAll('.sidenav');
+            const instances = M.Sidenav.init(elems, { edge: 'right' });
+            console.log('HERE');
+        });
+    </script>
+</body>
+</html>
