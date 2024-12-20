@@ -14,30 +14,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Services</title>
 </head>
 <body>
     <nav>
-        <div class="nav-wrapper">
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-            <ul class="hide-on-small-only">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="services.html">Services</a></li>
-            </ul>
-        </div>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
     </nav>
-    
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="services.html">Services</a></li>  
-    </ul>
 
     <!-- MAIN STARTS -->
 
@@ -54,13 +40,5 @@
     <footer>
         <p>&copy; 2024</p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const elems = document.querySelectorAll('.sidenav');
-            const instances = M.Sidenav.init(elems, { edge: 'right' });
-            console.log('HERE');
-        });
-    </script>
 </body>
 </html>
