@@ -6,7 +6,6 @@
 }
 
 nav, footer {
-    min-height: var(--bar);
     background-color: steelblue;
     color: white;
     display: flex;
@@ -24,6 +23,16 @@ nav a, footer a{
 nav {
     display: flex;
     align-items: center;
+    max-height: var(--bar);
+    line-height: var(--bar);
+}
+
+footer {
+    min-height: var(--bar);
+}
+
+.nav-wrapper {
+    max-height: var(--bar) !important;
 }
 
 nav a:hover,
@@ -129,4 +138,8 @@ ul {
 
 .hide-on-small-only li{
     display: block;
+}
+
+.nav-wrapper > a {
+    padding-right: 0;
 }
