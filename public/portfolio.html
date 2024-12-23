@@ -14,15 +14,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Portfolio</title>
 </head>
 <body>
-    <nav>
+    <!-- <nav>
         <a href="home.html">Home</a>
         <a href="about.html">About</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="services.html">Services</a>
+    </nav> -->
+
+    <nav>
+        <a href="/home">Home</a>
+        <a href="/about">About</a>
+        <a href="/portfolio">Portfolio</a>
+        <a href="/services">Services</a>
     </nav>
 
     <!-- MAIN STARTS -->
@@ -30,7 +38,20 @@
     <main class="py-main">
         <aside></aside>
         <section>
-            <h1>Portfolio</h1>
+            <h1 class="pb">Portfolio</h1>
+            <p class="pb">Here are is the page that lists the various projects I have been invloved with. All project artifacts are available for download:</p>
+            <div class="project">
+                <div class="project-title-dl">
+                    <h3>Web API Testing</h3>
+                    <br/>
+                    <a href="docs/Test Plan.pdf"><i class="bi bi-filetype-pdf"></i> Test Plan — Download</a>
+                    <a href="docs/Test Cases.pdf"><i class="bi bi-filetype-pdf"></i> Test Cases — Download</a>
+                </div>
+                <div class="project-desc">
+                    <p>Devised a test plan and accompanying test cases for the back-end of Bags.io Full-stack (SERN) Web Application. The test cases were deliberately planned to test the creation, updating and deletion of various records in various tables, as well as testing an important Postre SQL feature "cascade-on-delete". This set of test cases uses an accompanying collection of Postman requests which are used during test execution for verification after database migration.</p>
+                </div>
+            </div>
+            
         </section>
         <aside></aside>
     </main>

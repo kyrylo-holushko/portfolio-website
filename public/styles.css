@@ -73,23 +73,54 @@ main {
     grid-template-columns: minmax(2ch, auto) minmax(auto, 6.5in) minmax(2ch, auto);
 }
 
-section {
-    display: grid;
-    grid-template-columns: subgrid;
-}
-
 h1,h2,h3,h4 {
     text-align: center;
 }
 
-h1 {
+ul {
+    list-style-position: inside;
+}
+
+.pt {
     padding-top: calc(var(--bar) * 0.5);
 }
 
-h4 {
+.pb {
     padding-bottom: calc(var(--bar) * 0.5);
 }
 
-ul {
-    list-style-position: inside;
+.project {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.project a {
+    display: block;
+}
+
+.project-desc {
+    font-size: clamp(12px, calc(16px - ((4 / (1280 - 780)) * (100vw - 780))), 16px);
+}
+
+.project-title-dl {
+    flex-basis: auto;
+    flex-grow: 0;     
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+section {
+    container-type: inline-size;
+    container-name: content;
+}
+
+@container content (min-width: 6.5in){
+    .project {
+        flex-wrap: nowrap;
+    }
+
+    .project-desc {
+        font-size: small;
+    }
 }
