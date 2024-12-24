@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="none">
+    <meta name="author" content="Kyrylo Holushko">
+    <meta name="description" content="Kyrylo Holushko's Portfolio Website">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Kyrylo Holushko Portfolio">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:url" content="/">-->
+    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQH--WcK6NAIxQ/profile-displayphoto-shrink_400_400/B4EZNel6.bGQAg-/0/1732458819896?e=1740009600&v=beta&t=4QOF_32uHtTD75-zOVwDEMBea_h_N_LV-5ZIShVHgBs">
+    <meta property="og:description" content="Kyrylo Holushko's Portfolio Website. A display of my services, my projects as well as short bio about me."/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/home" onclick="route();">Home</a>
+        <a href="/about" onclick="route();">About</a>
+        <a href="/portfolio" onclick="route();">Portfolio</a>
+        <a href="/services" onclick="route();">Services</a>
+    </nav>
+
+    <main class="py-main">
+        <aside></aside>
+        <section id="placeholder"></section>
+        <aside></aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024</p>
+    </footer>
+
+    <script src="home.js" type="text/javascript"></script>
+    <script src="about.js" type="text/javascript"></script>
+    <script src="portfolio.js" type="text/javascript"></script>
+    <script src="services.js" type="text/javascript"></script>
+    <script>
+        const routes = {
+            '/home' : home,
+            '/about' : about,
+            '/portfolio' : portfolio,
+            '/services' : services
+        };
+
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if(window.location.pathname === '/'){
+                const currentLocation = window.location;
+                window.location.href = `${currentLocation.protocol}//${currentLocation.host}/home`;
+                return;
+            }
+            window.injectionPoint = document.getElementById('placeholder');
+            window.injectionPoint.innerHTML = routes[window.location.pathname];
+        });
+
+        const route = (event) => {
+            event = event || window.event;
+            event.preventDefault();
+            window.history.pushState({}, "", event.target.href);
+            window.injectionPoint.innerHTML = routes[window.location.pathname];
+        };
+
+        window.onpopstate = () => {
+            window.injectionPoint.innerHTML = routes[window.location.pathname];
+        }
+    </script>
+
+</body>
+</html>

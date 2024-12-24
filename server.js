@@ -2,26 +2,20 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static(`${__dirname}/public`, { extensions: ['html']}));
+app.use(express.static(`${__dirname}/public`, { extensions: ['html'], maxAge: 0 }));
 
-app.get('/', (req, res) =>{
-    res.redirect('/home');
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+    next();
 });
 
-app.get('/home',(req, res)=>{
-    res.sendFile(`${__dirname}/public/home.html`);
+app.get((['/','/home','/about','/portfolio','/services']), (req,res)=>{
+    console.log('one-time entry');
+    res.sendFile(`${__dirname}/public/index.html`);
 });
 
-app.get('/about',(req, res)=>{
-    res.sendFile(`${__dirname}/public/about.html`);
-});
+app.get('*', (req,res)=>{res.send('<h1>404 PAGE NOT FOUND</h1>')});
 
-app.get('/portfolio',(req, res)=>{
-    res.sendFile(`${__dirname}/public/portfolio.html`);
-});
-
-app.get('/services',(req, res)=>{
-    res.sendFile(`${__dirname}/public/services.html`);
-});
-
-app.listen(1337, console.log('SERVER RUNNING ⚙️💡'));
+app.listen(8080, console.log('SERVER RUNNING ⚙️💡'));
